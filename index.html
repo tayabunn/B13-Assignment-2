@@ -29,8 +29,10 @@
         }
         /* Add smooth hover effect for the subscribe button */
         .subscribe-button {
-            background: linear-gradient(47.64deg, #f7e93f, #fb09b4, #9100f8);
-            transition: background 2s ease;
+            background: linear-gradient(47.64deg, #f7e93f, #fb09b4, #9100f8, #f7e93f);
+            background-size: 200% 200%;
+            background-position: 0% 0%;
+            transition: background-position 0.6s ease;
             font-weight: 600;
             font-style: normal;
             border-radius: 10000px;
@@ -42,7 +44,7 @@
             gap: 4px;
         }
         .subscribe-button:hover {
-            background: linear-gradient(47.64deg, #9100f8, #fb09b4, #f7e93f);
+            background-position: 100% 100%;
         }
     </style>
 
@@ -52,7 +54,7 @@
    <div class="bg-[#1A0B2E] text-white border-1 border-[#412567]">
 
    <!-- Navbar -->
-  <nav class="p-4 flex justify-between items-center">
+  <nav class="navbar-wrapper p-4 flex justify-between items-center">
     <!-- Logo -->
     <img src="./assets/TechWave logo.png" alt="TechWave Logo" class="w-32" />
 
