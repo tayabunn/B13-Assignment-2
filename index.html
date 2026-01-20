@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>TechWave</title>
 
-     <!-- Link to Google Fonts for Inter font -->
+    <!-- Link to Google Fonts for Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
-
         /* Apply Inter font to the whole page */
         body {
             font-family: 'Inter', sans-serif;
@@ -22,14 +22,14 @@
             margin: 0 auto;
         }
 
-         /* Wrapper inside the navbar for content */
+        /* Wrapper inside the navbar for content */
         .navbar-wrapper {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
-        
+
         /* Mobile navbar specific styles */
         @media (max-width: 767px) {
             .navbar-wrapper {
@@ -38,6 +38,7 @@
                 padding: 16px 20px 20px 16px;
             }
         }
+
         /* Add smooth hover effect for the subscribe button */
         .subscribe-button {
             background: linear-gradient(47.64deg, #f7e93f, #fb09b4, #9100f8, #f7e93f);
@@ -54,10 +55,11 @@
             align-items: center;
             gap: 4px;
         }
+
         .subscribe-button:hover {
             background-position: 100% 100%;
         }
-        
+
         /* Responsive adjustments */
         @media (min-width: 768px) {
             .subscribe-button {
@@ -65,109 +67,122 @@
                 padding: 12px 16px 12px 16px;
             }
         }
-        
+
         @media (min-width: 1024px) {
             .navbar-wrapper {
                 padding: 0 2rem;
             }
         }
+
         .header {
-            background-color: #1A0B2E; border: 2px solid #412567;
+            background-color: #1A0B2E;
+            border: 2px solid #412567;
         }
+
+        /* Title and description color */
+        .title,
+        .description {
+            color: #FFFFFF;
+            opacity: 80%;
+            margin-top: auto;
+            gap: 8px;
+        }
+
+        /* NEW badge styles */
         .new-badge {
-            background-color: #00FF88; 
-            color: #1A0B2E; 
-            font-size: 18px; 
-            font-weight: bold; 
-            padding: 4px 8px; 
-            border-radius: 9999px; 
-            box-shadow: 0 3px 27px 0px rgba(26, 11, 46, 0.1); 
+            background-color: #00FF88;
+            color: #1A0B2E;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 9999px;
+            box-shadow: 0 3px 27px 0px rgba(26, 11, 46, 0.1);
             position: absolute;
         }
-
-        
-        </style>
-
+    </style>
 </head>
 
 <body>
-   <div class="bg-[#1A0B2E] text-white border-2 border-[#412567] custom-navbar">
-   <!-- Navbar -->
-  <nav class="navbar-wrapper py-3 md:py-4 flex justify-between items-center">
-    <!-- Logo -->
-    <img src="./assets/TechWave logo.png" alt="TechWave Logo" class="w-20 md:w-28 lg:w-32" />
+    <div class="bg-[#1A0B2E] text-white border-2 border-[#412567] custom-navbar">
+        <!-- Navbar -->
+        <nav class="navbar-wrapper py-3 md:py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <img src="./assets/TechWave logo.png" alt="TechWave Logo" class="w-20 md:w-28 lg:w-32" />
 
-    <!-- Navbar Links and Button -->
-    <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
-      <a href="#about" class="text-sm lg:text-base hover:text-purple-400 transition">About</a>
-      <a href="#episodes" class="text-sm lg:text-base hover:text-purple-400 transition">Episodes</a>
-      <a href="#host" class="text-sm lg:text-base hover:text-purple-400 transition">Host</a>
-    </div>
+            <!-- Navbar Links and Button -->
+            <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="#about" class="text-sm lg:text-base hover:text-purple-400 transition">About</a>
+                <a href="#episodes" class="text-sm lg:text-base hover:text-purple-400 transition">Episodes</a>
+                <a href="#host" class="text-sm lg:text-base hover:text-purple-400 transition">Host</a>
+            </div>
 
-    <div class="subscribe-button-container hidden md:block">
-      <button class="subscribe-button text-white">Subscribe →</button>
-    </div>
+            <div class="subscribe-button-container hidden md:block">
+                <button class="subscribe-button text-white">Subscribe →</button>
+            </div>
 
-    <!-- Hamburger Menu for Mobile -->
-    <div class="md:hidden">
-      <button class="text-white p-2 hover:text-purple-400 transition" id="hamburger-btn">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu (for small screens) -->
-  <div class="md:hidden bg-purple-900 p-4 hidden" id="mobile-menu">
-    <div class="space-y-4">
-      <a href="#about" class="block text-sm hover:text-purple-400 transition">About</a>
-      <a href="#episodes" class="block text-sm hover:text-purple-400 transition">Episodes</a>
-      <a href="#host" class="block text-sm hover:text-purple-400 transition">Host</a>
-      <button class="subscribe-button text-white w-full justify-center">Subscribe →</button>
-    </div>
-  </div>
-
-  </div>
-</body>
-
-<script>
-  // Toggle mobile menu
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  hamburgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
-  <!-- Header Section with Background Image -->
-    <header class="relative flex flex-col items-center justify-center h-screen bg-cover bg-center"
-        style="background-image: url('./assets/hero-bg.png');">
-     <!-- Content in the header -->
-        <div class="relative flex items-center justify-center w-80 h-80">
-    <img src="./assets/hero-circle.png" alt="hero-circle" class="w-full h-full object-cover">
-    <img src="./assets/microphone.png" alt="Microphone" class="absolute w-200 h-200">
-    <div class="absolute animate-bounce top-0 right-0 mt-6 mr-6 bg-green-400 text-black text-xs font-semibold py-1 px-4 rounded-full shadow-lg">
-            NEW 
-        </div>
-        
-</div>
-
-            <!-- Title and Description -->
-            <h1 class="text-5xl text-white font-bold mt-7">TechWave</h1>
-            <p class="text-opacity-80 text-white">Your daily dose of tech insights, productivity hacks, and personal growth</p>
-
-            <!-- Buttons -->
-            <div class="flex justify-center gap-4 mt-6">
-                <button class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white py-2 px-6 rounded-lg hover:opacity-80">
-                    Listen on Spotify
+            <!-- Hamburger Menu for Mobile -->
+            <div class="md:hidden">
+                <button class="text-white p-2 hover:text-purple-400 transition" id="hamburger-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
-                <button class="bg-green-500 text-white py-2 px-6 rounded-lg hover:opacity-80">
-                    Subscribe
-                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (for small screens) -->
+        <div class="md:hidden bg-purple-900 p-4 hidden" id="mobile-menu">
+            <div class="space-y-4">
+                <a href="#about" class="block text-sm hover:text-purple-400 transition">About</a>
+                <a href="#episodes" class="block text-sm hover:text-purple-400 transition">Episodes</a>
+                <a href="#host" class="block text-sm hover:text-purple-400 transition">Host</a>
+                <button class="subscribe-button text-white w-full justify-center">Subscribe →</button>
             </div>
         </div>
 
+    </div>
+
+    <!-- Header Section with Background Image -->
+    <header class="relative flex flex-col items-center justify-center h-screen bg-cover bg-center"
+        style="background-image: url('./assets/hero-bg.png');">
+        <!-- Content in the header -->
+        <div class="relative flex items-center justify-center w-80 h-80">
+            <img src="./assets/hero-circle.png" alt="hero-circle" class="w-full h-full object-cover">
+            <img src="./assets/microphone.png" alt="Microphone" class="absolute w-200 h-200">
+            <div class="absolute animate-bounce top-0 right-0 mt-6 mr-6 bg-green-400 text-black text-xs font-semibold py-1 px-4 rounded-full shadow-lg">
+                NEW
+            </div>
+        </div>
+
+        <!-- Title and Description -->
+         <div class="title flex flex-col items-center text-center mt-6">
+        <h1 class="text-4xl text-white text-5xl font-bold mt-4">TechWave</h1>
+        <p class="mt-2 text-white sm:text-lg md:text-xl">
+            Your daily dose of tech insights, productivity hacks, <br>and personal growth</br>
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex justify-center gap-4 mt-6 flex-col sm:flex-row">
+            <button class="flex items-center justify-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white py-2 px-6 rounded-full hover:opacity-80 transition-all duration-300">
+                <img src="./assets/spotify.png" alt="Spotify Logo" class="w-6 h-6 mr-2" />
+                Listen On Spotify
+            </button>
+            <button class="flex items-center justify-center bg-transparent border-2 border-green-500 text-green-500 py-2 px-6 rounded-full hover:bg-green-500 hover:text-white transition-all duration-300">
+                <img src="./assets/message.png" class="w-5 h-4 mr-2" />
+                Subscribe
+            </button>
+        </div>
     </header>
+
+    <script>
+        // Toggle mobile menu
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
+
 </html>
