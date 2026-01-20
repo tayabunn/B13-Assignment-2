@@ -71,29 +71,27 @@
                 padding: 0 2rem;
             }
         }
-         /* Custom CSS for popup animation */
-        @keyframes popupAnimation {
-            0% {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+        .header {
+            background-color: #1A0B2E; border: 2px solid #412567;
+        }
+        .new-badge {
+            background-color: #00FF88; 
+            color: #1A0B2E; 
+            font-size: 18px; 
+            font-weight: bold; 
+            padding: 4px 8px; 
+            border-radius: 9999px; 
+            box-shadow: 0 3px 27px 0px rgba(26, 11, 46, 0.1); 
+            position: absolute;
         }
 
-        .popup-card {
-            animation: popupAnimation 0.5s ease-in-out;
-        }
-    </style>
+        
+        </style>
 
 </head>
 
 <body>
-   <div class="bg-[#1A0B2E] text-white border-1 border-[#412567]">
-
+   <div class="bg-[#1A0B2E] text-white border-2 border-[#412567] custom-navbar">
    <!-- Navbar -->
   <nav class="navbar-wrapper py-3 md:py-4 flex justify-between items-center">
     <!-- Logo -->
@@ -143,20 +141,23 @@
   });
 </script>
   <!-- Header Section with Background Image -->
-    <header class="relative flex flex-col items-center justify-center h-screen bg-cover bg-center" style="background-image: url('./assets/hero-bg.png');"></header>
-    <!-- Content in the header -->
-        <div class="relative z-10 text-center text-white p-8">
-            <div class="flex items-center justify-center">
-                <div class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-4 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v6m-3 3l3-3 3 3m-3-3v6m-9-4a9 9 0 1118 0 9 9 0 01-18 0z" />
-                    </svg>
-                </div>
-            </div>
+    <header class="relative flex flex-col items-center justify-center h-screen bg-cover bg-center"
+        style="background-image: url('./assets/hero-bg.png');">
+     <!-- Content in the header -->
+        <div class="relative flex items-center justify-center w-80 h-80">
+    <img src="./assets/hero-circle.png" alt="hero-circle" class="w-full h-full object-cover">
+    <img src="./assets/microphone.png" alt="Microphone" class="absolute w-200 h-200">
+    <div class="absolute animate-bounce top-0 right-0 mt-6 mr-6 bg-green-400 text-black text-xs font-semibold py-1 px-4 rounded-full shadow-lg">
+            NEW 
+        </div>
+        
+</div>
 
-            <h1 class="text-5xl font-bold mt-4">TechWave</h1>
-            <p class="mt-2 text-xl">Your daily dose of tech insights, productivity hacks, and personal growth</p>
+            <!-- Title and Description -->
+            <h1 class="text-5xl text-white font-bold mt-7">TechWave</h1>
+            <p class="text-opacity-80 text-white">Your daily dose of tech insights, productivity hacks, and personal growth</p>
 
+            <!-- Buttons -->
             <div class="flex justify-center gap-4 mt-6">
                 <button class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white py-2 px-6 rounded-lg hover:opacity-80">
                     Listen on Spotify
@@ -167,12 +168,6 @@
             </div>
         </div>
 
-        <!-- Popup Card -->
-        <div class="popup-card absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-black rounded-lg p-4 shadow-lg w-80 animate-popup">
-            <p class="font-semibold text-lg">New Episode Out Now!</p>
-            <p class="mt-2 text-sm">Check out the latest tech insights and productivity tips to boost your efficiency.</p>
-        </div>
-    </div>
-
+    </header>
 </body>
 </html>
