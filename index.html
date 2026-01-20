@@ -119,6 +119,34 @@
                 font-size: 1.5rem;
             }
         }
+
+        /* Custom styles for the section */
+        .highlight-text {
+            color: #00FF88;
+        }
+
+        .episode-card {
+            background-color: #2A0B2E;
+            border: 2px solid #412567;
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .episode-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .episode-description {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stats-text {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
         
     </style>
 </head>
@@ -249,6 +277,82 @@
         </div>
     </section>
 
+    <body class="bg-[#1A0B2E] text-white">
+
+    <!-- Featured Episodes Section -->
+    <section class="py-16 sm:py-24 md:py-32 text-center">
+        <h2 class="text-4xl sm:text-5xl font-bold mb-8">Featured Episodes</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+            <!-- Episode 1 -->
+            <div class="episode-card">
+                <iframe width="380" height="214" src="https://www.youtube.com/embed/KKNCiRWd_j0?si=YfJBTjR7d0RNfoxA" title="YouTube video player" frameborder="100" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="episode-title">The Future of AI in Everyday Life</h3>
+                    <span class="text-xs text-green-400">42 min</span>
+                </div>
+                <p class="episode-description">Exploring how artificial intelligence is transforming our daily routines and what to expect in the next decade.</p>
+                <button class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 py-2 px-4 rounded-full text-white hover:opacity-80">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 inline mr-2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    Play
+                </button>
+            </div>
+
+            <!-- Episode 2 -->
+            <div class="episode-card">
+                <img src="./assets/featured-episode.png" alt="Episode 2" class="w-full h-40 object-cover rounded-md mb-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="episode-title">Building Better Habits for Remote Work</h3>
+                    <span class="text-xs text-green-400">35 min</span>
+                </div>
+                <p class="episode-description">Practical strategies for staying productive and maintaining work-life balance in a remote environment.</p>
+                <button class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 py-2 px-4 rounded-full text-white hover:opacity-80">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 inline mr-2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    Play
+                </button>
+            </div>
+
+            <!-- Episode 3 -->
+            <div class="episode-card">
+                <img src="./assets/featured-episode.png" alt="Episode 3" class="w-full h-40 object-cover rounded-md mb-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="episode-title">Career Growth in Tech: A Roadmap</h3>
+                    <span class="text-xs text-green-400">51 min</span>
+                </div>
+                <p class="episode-description">Expert advice on navigating your tech career from junior developer to senior leadership roles.</p>
+                <button class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 py-2 px-4 rounded-full text-white hover:opacity-80">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 inline mr-2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    Play
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet The Host Section -->
+    <section class="py-16 sm:py-24 md:py-32 text-center bg-[#2A0B2E] border-t-2 border-[#412567]">
+        <h2 class="text-4xl sm:text-5xl font-bold mb-8">Meet The Host</h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center mb-8">
+                <img src="./assets/host-image.png" alt="Alex Kumar" class="w-32 h-32 rounded-full mr-6 mb-6 md:mb-0">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">Alex Kumar</h3>
+                    <p class="text-sm sm:text-base mb-4">Tech entrepreneur, productivity expert, and lifelong learner. Alex has been in the tech industry for over 10 years, working with startups and Fortune 500 companies. Through TechWave, Alex shares insights from industry leaders and practical advice for anyone looking to grow in tech.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-[#00FF88]"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="#" class="text-[#00FF88]"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#" class="text-[#00FF88]"><i class="fab fa-youtube"></i> YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
 </body>
 
 </html>
